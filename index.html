@@ -1,197 +1,83 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<title>Signup | Rallis Sarthak</title>
-<style>
-body{
-	margin:0;
-	padding:0;
-	font-family: Tahoma, Geneva, sans-serif;
-}
-
-#wrapper {
-	max-width: 450px;
-	margin: 0 auto;
-	background: url(https://rallissarthak.sproxil.us/images/bg.jpg) no-repeat center;
-	background-size: cover;
-	border: 12px solid #3abcee;
-	border-top: 0;
-}
-
-#header {
-	text-align: center;
-	padding-top: 30px;
-	padding-bottom: 30px;
-}
-
-#logo {
-	max-width: 136px;
-}
-
-#signup {
-	background-color: rgba(147,214,202,0.6);
-	max-width: 350px;
-	margin: 0 auto;
-	border-radius: 10px;
-	margin-bottom: 100px;
-}
-
-#form{
-	padding:20px;
-}
-.form_field input {
-	width: 94%;
-	height: 12px;
-	border-radius: 20px;
-	border: 1px solid #000;
-	background: transparent;
-	padding: 10px;
-	color: #000;
-}
-.form_field.twocol input {
-	width: 62%;
-}
-.form_field.twocol input.last {
-	width: 21%;
-  float: right;
-  font-size: 11px;
-}
-.form_field {
-	margin-bottom: 15px;
-	clear:both;
-}
-.form_field select {
-	width: 101%;
-	border-radius: 20px;
-	border: 1px solid #000;
-	background: transparent;
-	padding: 7px 10px;
-}
-.form_field.checkbox input {
-	width: auto;
-}
-.form_field.checkbox label {
-	font-size:12px;
-}
-.form_field_submit input {
-	background: #fcee21;
-	border: 0;
-	border-radius: 20px;
-	padding: 9px 20px;
-	color: #fd2a04;
-	cursor:pointer;
-}
-.form_field.twocol a.btn {
-	color: #000;
-	text-decoration: navajowhite;
-	border: 1px solid #000;
-	border-radius: 20px;
-	padding: 10px 15px;
-	font-size: 12px;
-}
-.form_field_submit{
-	text-align:center;
-}
-
-#footer-logo {
-  max-width: 220px;
-}
-
-#footer{
-	margin-bottom: 80px;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <title>Cashback Link Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f5f5f5;
+            gap: 20px;
+        }
+        button {
+            padding: 15px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            width: 260px;
+        }
+        .generate-btn {
+            background-color: #28a745;
+        }
+        .generate-btn:hover {
+            background-color: #218838;
+        }
+        .whatsapp-btn {
+            background-color: #25D366;
+        }
+        .whatsapp-btn:hover {
+            background-color: #1ebe5d;
+        }
+    </style>
 </head>
-
 <body>
-<div id="wrapper">
-	<div id="header">
-    	<img id="logo" src="https://rallissarthak.sproxil.us/images/logo.png" />
-    </div>
-    
-    <div id="signup">
-    	<div id="form">
-        	<form  method="post" id="formData" style="display: true;">
-            	<div class="form_field">
-                	<input type="text" name="your-name" value="" placeholder="કૃપા કરીને તમારું નામ દાખલ કરો" required="required"  id="name" />
-					<span class="error" id="nameError" style=" color: rgba(255, 0, 0, 0.9) !important;font-size:12px;margin-left: 12px;"></span>
-                </div>
-                <div class="form_field">
-                	<input type="text" name="your-phone" value="" placeholder="તમારો મોબાઈલ નંબર દાખલ કરો" required="required" id="mobile" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  />
-					<span class="error" id="mobileError" style=" color: rgba(255, 0, 0, 0.9);font-size:12px;margin-left: 12px;"></span>
-                </div>
-                <div class="form_field">
-                	<select name="" required="required" id="district" onchange="talukaselection(event);">
-                    	<option value="">તમારો જિલ્લો પસંદ કરો</option>
-                        <!-- <option>તમારો જિલ્લો પસંદ કરો</option>
-                        <option>તમારો જિલ્લો પસંદ કરો</option> -->
-                    </select>
-					<span class="error" id="districtError" style=" color: rgba(255, 0, 0, 0.9);font-size:12px;margin-left: 12px;"></span>
-                </div>
-                 <div class="form_field">
-                	<select name="" required="required" id="taluka">
-                    	<option value="">તમારો તાલુકો પસંદ કરો</option>
-                        <!-- <option>તમારો તાલુકો પસંદ કરો</option>
-                        <option>તમારો તાલુકો પસંદ કરો</option> -->
-                    </select>
-					<span class="error" id="talukaError" style=" color: rgba(255, 0, 0, 0.9);font-size:12px;margin-left: 12px;"></span>
-                </div>
-                <div class="form_field">
-                	<select name="" required="required" id="retailer">
-                    	<option value="">રિટેલરનું નામ પસંદ કરો</option>
-                        <!-- <option>રિટેલરનું નામ પસંદ કરો</option>
-                        <option>રિટેલરનું નામ પસંદ કરો</option> -->
-                    </select>
-					<span class="error" id="retailerError" style=" color: rgba(255, 0, 0, 0.9);font-size:12px;margin-left: 12px;"></span>
-                </div>
-                <div class="form_field twocol">
-                	<input type="text" name="your-upi" value="" placeholder="કૃપા કરીને તમારું UPI ID દાખલ કરો" required="required" id="upiId" /> 
-                    <a href="javascript:void(0);" class="btn" onclick="handleVerifyUPA(event);">સાચું ઠરાવવું</a>
-					<span class="error" id="upiIdError" style=" color: rgba(255, 0, 0, 0.9);font-size:12px;margin-left: 12px;"></span>
-                </div>
-                <div class="form_field" id="otpDiv">
-                	<input type="text" name="" value="" placeholder="ઓટીપી દાખલ કરો" required="required"  id="otp" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4"  />
-					<span class="error" id="otpError" style=" color: rgba(255, 0, 0, 0.9);font-size:12px;margin-left: 12px;"></span>
-                </div>
-				<div  class="form_field" id ="resendOtpDiv" style="text-align: center;" >
-					<a onclick="resendOtp(event);" style="color:white !important">Resend OTP</a>
-				</div>
 
-                <div class="form_field checkbox">
-                    <input type="checkbox" name="accept" required="required"  id="agreeTerms"  />
-                    <label for="accept"> અમારી પ્રાઈવસી પોલિસી સાથે સમંત થવા અહીં ક્લિક કરો. <a href=" https://www.rallis.com/privacy-policy#:~:text=We%20retain%20your%20Data%20as,disputes%20and%20enforcing%20our%20agreements.">પ્રાઈવસી પોલિસી</a></label>
-					<br>
-					<span class="error" id="termsError" style=" color: rgba(255, 0, 0, 0.9);font-size:12px;margin-left: 12px;"></span>
-                </div>
-                <div class="form_field_submit">
-                	<input type="submit" name="" value="સબમિટ કરો" id="submitBtn" onclick="validateData(event);" />
-                </div>
-            </form>
-        </div>
-    </div>
-    
-    <div id="footer">
-    	<img id="footer-logo" src="https://rallissarthak.sproxil.us/images/blue-logo.png" />
-    </div>
-</div>
-<script src="https://rallissarthak.sproxil.us/js/jquery.min.js"></script>
-<script src="https://rallissarthak.sproxil.us/js/script.js"></script>
-<script src="https://rallissarthak.sproxil.us/js/upivalidation.js"></script>
-<script src="https://rallissarthak.sproxil.us/js/main.js"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PP5QF1C8D1"></script>
+<button class="generate-btn" onclick="generateLink()">
+    Generate Cashback Link
+</button>
+
+<button class="whatsapp-btn" onclick="joinWhatsapp()">
+    Join WhatsApp Group
+</button>
+
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+function generateLink() {
+    const baseUrl = "https://rallistaqatcampaign.buyerr.in/?code=BC00000182xxxx&type=1a2dbdc6#";
 
-  gtag('config', 'G-PP5QF1C8D1');
+    let usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
+
+    if (usedCodes.length >= 10000) {
+        alert("All possible 4-digit codes have been used.");
+        return;
+    }
+
+    let randomCode;
+    do {
+        randomCode = Math.floor(Math.random() * 10000)
+            .toString()
+            .padStart(4, '0');
+    } while (usedCodes.includes(randomCode));
+
+    usedCodes.push(randomCode);
+    localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
+
+    const finalUrl = baseUrl.replace("xxxx", randomCode);
+    window.open(finalUrl, "_blank");
+}
+
+function joinWhatsapp() {
+    window.open(
+        "https://chat.whatsapp.com/LC1QegWVinv1SO8P9GlHmo",
+        "_blank"
+    );
+}
 </script>
 
 </body>
